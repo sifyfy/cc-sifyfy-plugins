@@ -68,6 +68,7 @@ where doc indexes achieved 100% pass rate vs 53% baseline without documentation.
 
 After generating the index:
 - Add `.{product-name}-docs/` to `.gitignore` if documentation should not be committed
+- Add `.claude/rules/{product-name}-docs.md` to `.gitignore` if documentation should not be committed
 - Inform the user that the index is active and will be loaded in future sessions
 - Explain that the AI agent will now prefer reading actual docs over relying on training data
 
