@@ -39,7 +39,7 @@ where doc indexes achieved 100% pass rate vs 53% baseline without documentation.
    ```bash
    bash ${CLAUDE_PLUGIN_ROOT}/skills/docs-indexer/scripts/generate-index.sh ./.{product-name}-docs "{Product Name}"
    ```
-4. Capture the stdout output and save it to `.claude/rules/{product-name}-docs.md`
+4. Capture the stdout output and save it to `.claude/rules/docs/{product-name}-docs.md`
 5. Verify the generated index (see Verification section below)
 
 ### Source: URL (Web Documentation)
@@ -62,13 +62,13 @@ where doc indexes achieved 100% pass rate vs 53% baseline without documentation.
    ```bash
    bash ${CLAUDE_PLUGIN_ROOT}/skills/docs-indexer/scripts/generate-index.sh ./.{product-name}-docs "{Product Name}"
    ```
-6. Capture the stdout output and save it to `.claude/rules/{product-name}-docs.md`
+6. Capture the stdout output and save it to `.claude/rules/docs/{product-name}-docs.md`
 
 ### Post-Generation
 
 After generating the index:
 - Add `.{product-name}-docs/` to `.gitignore` if documentation should not be committed
-- Add `.claude/rules/{product-name}-docs.md` to `.gitignore` if documentation should not be committed
+- Add `.claude/rules/docs/` to `.gitignore` if the generated index should not be committed
 - Inform the user that the index is active and will be loaded in future sessions
 - Explain that the AI agent will now prefer reading actual docs over relying on training data
 
@@ -110,7 +110,7 @@ no files matching the supported extensions. Verify the file types in the source 
 
 ### Output Issues
 
-- **`.claude/rules/` directory does not exist**: Create it with `mkdir -p .claude/rules/`.
+- **`.claude/rules/docs/` directory does not exist**: Create it with `mkdir -p .claude/rules/docs/`.
 - **Existing index file**: Ask the user whether to overwrite or create with a different name.
 
 ## Index Format
@@ -141,7 +141,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/skills/docs-indexer/scripts/generate-index.sh <source
 
 **Output**: Compressed pipe-delimited index string to stdout. Redirect to save:
 ```bash
-bash ${CLAUDE_PLUGIN_ROOT}/skills/docs-indexer/scripts/generate-index.sh ./docs "MyLib" > .claude/rules/mylib-docs.md
+bash ${CLAUDE_PLUGIN_ROOT}/skills/docs-indexer/scripts/generate-index.sh ./docs "MyLib" > .claude/rules/docs/mylib-docs.md
 ```
 
 **Supported file types**: `.md`, `.mdx`, `.txt`, `.rst`, `.html`, `.htm`, `.adoc`
@@ -155,7 +155,8 @@ The script uses process substitution (`< <(...)`) which requires bash, not sh.
 project/
 ├── .claude/
 │   └── rules/
-│       └── {product-name}-docs.md   # Compressed index (auto-loaded by Claude Code)
+│       └── docs/
+│           └── {product-name}-docs.md   # Compressed index (auto-loaded by Claude Code)
 ├── .{product-name}-docs/             # Documentation files (referenced by index)
 │   ├── getting-started/
 │   │   └── installation.md

@@ -85,7 +85,7 @@ Default file extensions scanned by `generate-index.sh`:
 
 ## Placement in .claude/rules/
 
-Save the generated index as `.claude/rules/{product-name}-docs.md`.
+Save the generated index as `.claude/rules/docs/{product-name}-docs.md`.
 Claude Code's rules system automatically loads it into context at session start.
 
 ### File Layout Example
@@ -94,7 +94,8 @@ Claude Code's rules system automatically loads it into context at session start.
 project/
 ├── .claude/
 │   └── rules/
-│       └── react-docs.md        # Compressed index
+│       └── docs/
+│           └── react-docs.md    # Compressed index
 ├── .react-docs/                  # Documentation files
 │   ├── guides/
 │   │   ├── intro.md
