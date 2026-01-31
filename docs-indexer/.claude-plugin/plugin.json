@@ -1,0 +1,10 @@
+{
+  "name": "docs-indexer",
+  "version": "0.1.0",
+  "description": "Generate compressed documentation indexes for AI coding agents from local directories or URLs",
+  "author": {
+    "name": "Sifyfy"
+  },
+  "license": "MIT",
+  "keywords": ["documentation", "index", "agents-md", "context", "docs"]
+}

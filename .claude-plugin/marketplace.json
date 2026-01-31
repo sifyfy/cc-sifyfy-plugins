@@ -1,0 +1,19 @@
+{
+  "name": "sifyfy-plugins",
+  "owner": {
+    "name": "Sifyfy"
+  },
+  "metadata": {
+    "description": "Sifyfy's Claude Code plugin collection"
+  },
+  "plugins": [
+    {
+      "name": "docs-indexer",
+      "source": "./docs-indexer",
+      "description": "Generate compressed documentation indexes for AI coding agents from local directories or URLs",
+      "version": "0.1.0",
+      "keywords": ["documentation", "index", "agents-md", "context", "docs"],
+      "category": "productivity"
+    }
+  ]
+}
