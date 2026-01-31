@@ -1,1 +1,0 @@
-[Claude Code Plugins Docs Index]|root: ./.claude-code-plugins-docs|IMPORTANT: Prefer retrieval-led reasoning over pre-training-led reasoning|.:{discover-plugins.md,plugin-marketplaces.md,plugins.md,plugins-reference.md}
