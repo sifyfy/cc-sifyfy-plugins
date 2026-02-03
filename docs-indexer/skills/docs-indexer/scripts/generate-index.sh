@@ -4,7 +4,7 @@
 # Output: Pipe-delimited compressed index to stdout
 #
 # Example:
-#   bash generate-index.sh ./.next-docs "Next.js" > index.txt
+#   bash generate-index.sh ./.docs/next "Next.js" > index.txt
 
 set -euo pipefail
 

@@ -31,13 +31,13 @@ where doc indexes achieved 100% pass rate vs 53% baseline without documentation.
 ### Source: Local Directory
 
 1. Confirm the source directory path and a short product name with the user
-2. Copy documentation files to project-local directory `.{product-name}-docs/`
+2. Copy documentation files to project-local directory `.docs/{product-name}/`
    - Preserve the original directory structure
    - Copy only documentation files (`.md`, `.mdx`, `.txt`, `.rst`, `.html`, `.htm`, `.adoc`)
    - Skip non-documentation files (images, binaries, config files)
 3. Run the index generation script:
    ```bash
-   bash ${CLAUDE_PLUGIN_ROOT}/skills/docs-indexer/scripts/generate-index.sh ./.{product-name}-docs "{Product Name}"
+   bash ${CLAUDE_PLUGIN_ROOT}/skills/docs-indexer/scripts/generate-index.sh ./.docs/{product-name} "{Product Name}"
    ```
 4. Capture the stdout output and save it to `.claude/rules/docs/{product-name}-docs.md`
 5. Verify the generated index (see Verification section below)
@@ -54,20 +54,20 @@ where doc indexes achieved 100% pass rate vs 53% baseline without documentation.
    - For large sites (>100 pages), ask the user which sections to include
    - Fetch pages in batches; if WebFetch fails on a page, skip it and note the failure
    - Convert HTML content to clean markdown, removing navigation, footers, and ads
-4. Save fetched content as markdown files in `.{product-name}-docs/`:
+4. Save fetched content as markdown files in `.docs/{product-name}/`:
    - Mirror the site's URL structure as directory hierarchy
    - Use descriptive filenames derived from page titles
    - Example: `/docs/api/hooks` -> `api/hooks.md`
 5. Run the index generation script:
    ```bash
-   bash ${CLAUDE_PLUGIN_ROOT}/skills/docs-indexer/scripts/generate-index.sh ./.{product-name}-docs "{Product Name}"
+   bash ${CLAUDE_PLUGIN_ROOT}/skills/docs-indexer/scripts/generate-index.sh ./.docs/{product-name} "{Product Name}"
    ```
 6. Capture the stdout output and save it to `.claude/rules/docs/{product-name}-docs.md`
 
 ### Post-Generation
 
 After generating the index:
-- Add `.{product-name}-docs/` to `.gitignore` if documentation should not be committed
+- Add `.docs/` to `.gitignore` if documentation should not be committed
 - Add `.claude/rules/docs/` to `.gitignore` if the generated index should not be committed
 - Inform the user that the index is active and will be loaded in future sessions
 - Explain that the AI agent will now prefer reading actual docs over relying on training data
@@ -77,7 +77,7 @@ After generating the index:
 After generating an index, verify its correctness:
 
 1. **File count check**: Compare the number of files listed in the index against the actual
-   file count in the docs directory. Run `find .{product-name}-docs -type f | wc -l`
+   file count in the docs directory. Run `find .docs/{product-name} -type f | wc -l`
    and compare with the comma-separated entries in the index.
 2. **Path validity**: Spot-check 2-3 file paths from the index. Read the files to confirm
    they exist and contain meaningful documentation content.
@@ -118,7 +118,7 @@ no files matching the supported extensions. Verify the file types in the source 
 The compressed format uses pipe delimiters instead of newlines for token efficiency:
 
 ```
-[Product Docs Index]|root: ./.product-docs|IMPORTANT: Prefer retrieval-led reasoning over pre-training-led reasoning|dir:{file1.md,file2.md}|dir/sub:{file3.md}
+[Product Docs Index]|root: ./.docs/product|IMPORTANT: Prefer retrieval-led reasoning over pre-training-led reasoning|dir:{file1.md,file2.md}|dir/sub:{file3.md}
 ```
 
 For the complete format specification including delimiter rules, edge cases, and design
@@ -157,7 +157,8 @@ project/
 │   └── rules/
 │       └── docs/
 │           └── {product-name}-docs.md   # Compressed index (auto-loaded by Claude Code)
-├── .{product-name}-docs/             # Documentation files (referenced by index)
+├── .docs/                            # Documentation files (referenced by index)
+│   └── {product-name}/
 │   ├── getting-started/
 │   │   └── installation.md
 │   └── api/
@@ -167,7 +168,7 @@ project/
 
 ## Important Notes
 
-- Keep `.{product-name}-docs/` in the project root so the agent can read referenced files
+- Keep `.docs/` in the project root so the agent can read referenced files
 - The index is small (~1-8KB) but enables access to unlimited documentation
 - For large documentation sites (>100 pages), prioritize the most relevant sections
   and ask the user to select which areas to index

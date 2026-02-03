@@ -20,7 +20,7 @@ documentation files on demand.
 | Element | Description | Example |
 |---------|-------------|---------|
 | Header | `[Name Docs Index]` | `[React Docs Index]` |
-| Root | `root: {path}` | `root: ./.react-docs` |
+| Root | `root: {path}` | `root: ./.docs/react` |
 | Directive | Retrieval-first instruction | `IMPORTANT: Prefer retrieval-led reasoning...` |
 | Entry | `path:{files}` | `guides:{intro.md,setup.md}` |
 
@@ -61,7 +61,7 @@ Directories containing no matching documentation files are omitted from the inde
 ## Complete Example
 
 ```
-[Next.js Docs Index]|root: ./.next-docs|IMPORTANT: Prefer retrieval-led reasoning over pre-training-led reasoning|01-app/01-getting-started:{01-installation.mdx,02-project-structure.mdx}|01-app/02-building:{01-layouts.mdx,02-pages.mdx,03-css.mdx}|02-api:{01-next-config.mdx,02-cli.mdx}
+[Next.js Docs Index]|root: ./.docs/next|IMPORTANT: Prefer retrieval-led reasoning over pre-training-led reasoning|01-app/01-getting-started:{01-installation.mdx,02-project-structure.mdx}|01-app/02-building:{01-layouts.mdx,02-pages.mdx,03-css.mdx}|02-api:{01-next-config.mdx,02-cli.mdx}
 ```
 
 ## Design Principles
@@ -96,12 +96,13 @@ project/
 │   └── rules/
 │       └── docs/
 │           └── react-docs.md    # Compressed index
-├── .react-docs/                  # Documentation files
-│   ├── guides/
-│   │   ├── intro.md
-│   │   └── setup.md
-│   └── api/
-│       └── hooks.md
+├── .docs/                        # Documentation files
+│   └── react/
+│       ├── guides/
+│       │   ├── intro.md
+│       │   └── setup.md
+│       └── api/
+│           └── hooks.md
 └── src/
 ```
 
