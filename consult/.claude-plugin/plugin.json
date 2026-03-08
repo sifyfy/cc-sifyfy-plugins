@@ -1,0 +1,10 @@
+{
+  "name": "consult",
+  "version": "0.1.0",
+  "description": "Pre-implementation consulting phase that analyzes work requests from the requirements layer down, proposing solutions at each abstraction level before committing to implementation.",
+  "author": {
+    "name": "Sifyfy"
+  },
+  "license": "MIT",
+  "keywords": ["consulting", "analysis", "requirements", "scope", "pre-implementation"]
+}
