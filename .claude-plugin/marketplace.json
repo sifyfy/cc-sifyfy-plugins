@@ -14,6 +14,14 @@
       "version": "0.1.0",
       "keywords": ["documentation", "index", "agents-md", "context", "docs"],
       "category": "productivity"
+    },
+    {
+      "name": "codex-bridge",
+      "source": "./codex-bridge",
+      "description": "Codex (OpenAI) をセカンドオピニオンとして活用するプラグイン",
+      "version": "0.1.0",
+      "keywords": ["codex", "second-opinion", "review", "cross-model"],
+      "category": "productivity"
     }
   ]
 }

@@ -1,0 +1,10 @@
+{
+  "name": "codex-bridge",
+  "version": "0.1.0",
+  "description": "Codex (OpenAI) をセカンドオピニオンとして活用するプラグイン",
+  "author": {
+    "name": "Sifyfy"
+  },
+  "license": "MIT",
+  "keywords": ["codex", "second-opinion", "review", "cross-model"]
+}
