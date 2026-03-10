@@ -1,0 +1,10 @@
+{
+  "name": "refine",
+  "version": "0.1.0",
+  "description": "Post-implementation code refinement: runs language-appropriate linters and applies structural simplification review to eliminate verbosity.",
+  "author": {
+    "name": "Sifyfy"
+  },
+  "license": "MIT",
+  "keywords": ["refine", "lint", "review", "simplify", "code-quality"]
+}

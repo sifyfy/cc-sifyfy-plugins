@@ -12,15 +12,54 @@
       "source": "./docs-indexer",
       "description": "Generate compressed documentation indexes for AI coding agents from local directories or URLs",
       "version": "0.1.0",
-      "keywords": ["documentation", "index", "agents-md", "context", "docs"],
+      "keywords": [
+        "documentation",
+        "index",
+        "agents-md",
+        "context",
+        "docs"
+      ],
       "category": "productivity"
+    },
+    {
+      "name": "consult",
+      "source": "./consult",
+      "description": "Pre-implementation consulting phase that analyzes work requests from requirements layer down through each abstraction level",
+      "version": "0.1.0",
+      "keywords": [
+        "consulting",
+        "analysis",
+        "requirements",
+        "scope",
+        "pre-implementation"
+      ],
+      "category": "workflow"
+    },
+    {
+      "name": "refine",
+      "source": "./refine",
+      "description": "Post-implementation code refinement: linting and structural simplification review to eliminate verbosity",
+      "version": "0.1.0",
+      "keywords": [
+        "refine",
+        "lint",
+        "review",
+        "simplify",
+        "code-quality"
+      ],
+      "category": "workflow"
     },
     {
       "name": "codex-bridge",
       "source": "./codex-bridge",
       "description": "Codex (OpenAI) をセカンドオピニオンとして活用するプラグイン",
       "version": "0.1.0",
-      "keywords": ["codex", "second-opinion", "review", "cross-model"],
+      "keywords": [
+        "codex",
+        "second-opinion",
+        "review",
+        "cross-model"
+      ],
       "category": "productivity"
     }
   ]
