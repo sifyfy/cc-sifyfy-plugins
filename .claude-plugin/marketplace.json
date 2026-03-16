@@ -63,6 +63,19 @@
       "category": "productivity"
     },
     {
+      "name": "mutate",
+      "source": "./mutate",
+      "description": "既存テストの品質をミューテーションテストで検証し、フィードバックループで改善するパイプライン",
+      "version": "0.1.0",
+      "keywords": [
+        "mutation-testing",
+        "test-quality",
+        "stryker",
+        "feedback-loop"
+      ],
+      "category": "workflow"
+    },
+    {
       "name": "teammate-driven-dev",
       "source": "./teammate-driven-dev",
       "description": "TeamCreate + SendMessage ベースのプラン実行スキル。永続チームメイトのコンテキスト蓄積を活かす。",
