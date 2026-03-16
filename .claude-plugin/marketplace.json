@@ -61,6 +61,20 @@
         "cross-model"
       ],
       "category": "productivity"
+    },
+    {
+      "name": "teammate-driven-dev",
+      "source": "./teammate-driven-dev",
+      "description": "TeamCreate + SendMessage ベースのプラン実行スキル。永続チームメイトのコンテキスト蓄積を活かす。",
+      "version": "0.1.0",
+      "keywords": [
+        "team",
+        "teammates",
+        "execution",
+        "plan",
+        "persistent-context"
+      ],
+      "category": "workflow"
     }
   ]
 }
