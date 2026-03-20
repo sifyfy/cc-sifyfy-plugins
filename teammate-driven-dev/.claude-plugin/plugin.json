@@ -1,6 +1,6 @@
 {
   "name": "teammate-driven-dev",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "TeamCreate + SendMessage ベースのプラン実行スキル。使い捨てサブエージェントの代替として、永続チームメイトのコンテキスト蓄積を活かす。",
   "author": {
     "name": "Sifyfy"
