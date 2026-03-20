@@ -6,7 +6,7 @@ Agent tool の各パラメータを以下のように指定してチームメイ
 
 | パラメータ | 値 |
 |---|---|
-| `name` | `"implementer"` |
+| `name` | `"implementer"`（lines=1）/ `"implementer-1"` 〜 `"implementer-N"`（lines≥2） |
 | `team_name` | `[チーム名]` |
 | `model` | `"sonnet"` |
 | `description` | `"Implement Task N: [task name]"` |
